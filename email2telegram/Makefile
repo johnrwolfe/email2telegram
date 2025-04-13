@@ -5,7 +5,7 @@ ENV_FILE=.env.yaml
 
 deploy:
 	gcloud functions deploy $(FUNCTION_NAME) \
-		--entry-point=app \
+		--entry-point=handle_request \
 		--runtime=python310 \
 		--trigger-topic=gmail-notifications \
 		--source=. \
